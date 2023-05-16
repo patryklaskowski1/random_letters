@@ -26,6 +26,35 @@ class HomePage extends StatefulWidget {
   State<HomePage> createState() => _HomePageState();
 }
 
+final List<String> letters = [
+  'A',
+  'B',
+  'C',
+  'D',
+  'E',
+  'F',
+  'G',
+  'H',
+  'I',
+  'J',
+  'K',
+  'L',
+  'M',
+  'N',
+  'O',
+  'P',
+  'R',
+  'S',
+  'T',
+  'U',
+  'W',
+  'X',
+  'Y',
+  'Z',
+];
+String letter = 'X';
+Random draw = Random();
+
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
@@ -44,16 +73,20 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Column(
         children: [
-          const Center(
+          Center(
             child: Text(
-              'A',
-              style: TextStyle(
-                fontSize: 320,
+              letter,
+              style: const TextStyle(
+                fontSize: 300,
               ),
             ),
           ),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              setState(() {
+                letter = letters[draw.nextInt(letters.length)];
+              });
+            },
             child: const Text(
               'DRAW',
             ),
