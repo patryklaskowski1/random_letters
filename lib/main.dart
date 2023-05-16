@@ -1,4 +1,5 @@
 import 'dart:math';
+import 'dart:ui';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -60,26 +61,44 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey,
+        backgroundColor: Colors.brown,
         centerTitle: true,
         toolbarHeight: 120,
         title: const Text(
           'Random Letters',
           style: TextStyle(
             fontSize: 30,
-            color: Colors.black54,
+            color: Colors.black87,
           ),
         ),
       ),
       body: Column(
         children: [
-          Center(
-            child: Text(
-              letter,
-              style: const TextStyle(
-                fontSize: 300,
+          const SizedBox(height: 20),
+          const Text(
+            'You letter is ... :',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 30,
+            ),
+          ),
+          const SizedBox(height: 20),
+          Container(
+            decoration: const BoxDecoration(
+              shape: BoxShape.circle,
+              color: Colors.brown,
+            ),
+            child: Center(
+              child: Text(
+                letter,
+                style: const TextStyle(
+                  fontSize: 300,
+                ),
               ),
             ),
+          ),
+          const SizedBox(
+            height: 90,
           ),
           ElevatedButton(
             onPressed: () {
@@ -87,8 +106,16 @@ class _HomePageState extends State<HomePage> {
                 letter = letters[draw.nextInt(letters.length)];
               });
             },
+            style: ElevatedButton.styleFrom(
+              primary: Colors.brown,
+              padding: const EdgeInsets.all(20),
+            ),
             child: const Text(
               'DRAW',
+              style: TextStyle(
+                fontSize: 30,
+                color: Colors.black,
+              ),
             ),
           )
         ],
