@@ -1,5 +1,4 @@
 import 'dart:math';
-import 'dart:ui';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -12,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const MaterialApp(
-      title: 'Simple random letters App',
+      title: 'Simple random generator letter App',
       home: HomePage(),
     );
   }
@@ -61,7 +60,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.brown,
+        backgroundColor: Color.fromARGB(255, 158, 51, 12),
         centerTitle: true,
         toolbarHeight: 120,
         title: const Text(
@@ -82,11 +81,11 @@ class _HomePageState extends State<HomePage> {
               fontSize: 30,
             ),
           ),
-          const SizedBox(height: 20),
+          const SizedBox(height: 30),
           Container(
             decoration: const BoxDecoration(
               shape: BoxShape.circle,
-              color: Colors.brown,
+              color: Color.fromARGB(255, 158, 51, 12),
             ),
             child: Center(
               child: Text(
@@ -98,7 +97,7 @@ class _HomePageState extends State<HomePage> {
             ),
           ),
           const SizedBox(
-            height: 90,
+            height: 70,
           ),
           ElevatedButton(
             onPressed: () {
@@ -107,7 +106,7 @@ class _HomePageState extends State<HomePage> {
               });
             },
             style: ElevatedButton.styleFrom(
-              primary: Colors.brown,
+              primary: const Color.fromARGB(255, 158, 51, 12),
               padding: const EdgeInsets.all(20),
             ),
             child: const Text(
